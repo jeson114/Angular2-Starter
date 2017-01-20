@@ -1,0 +1,11 @@
+<div class="jumbotron" *ngIf="!activeUser">
+    <h3>System Users</h3>
+</div>
+<div *ngIf="users">
+    <div class="col-sm-4" *ngFor="let user of users" (click)="selectUser(user)" [class.active]="user === activeUser">
+        <div class="user-card text-center">
+            <img [src]="user.avatar" class="user-avatar img-rounded">
+            <h5>{{user.first_name}}{{user.last_name}}</h5>
+        </div>
+    </div>
+</div>
